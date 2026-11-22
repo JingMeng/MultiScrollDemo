@@ -3,15 +3,14 @@ package com.siberiadante.multiscrolldemo.view;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Rect;
-import android.support.v7.widget.RecyclerView;
+import androidx.recyclerview.widget.RecyclerView;
 import android.view.View;
 
 /**
- * @Created： SiberiaDante
- * @Date： 2017/11/11
- * @Describe：
- * @github： https://github.com/SiberiaDante
- * @博客园： http://www.cnblogs.com/shen-hua/
+ * @Created锛?SiberiaDante
+ * @Date锛?2017/11/11
+ * @Describe锛? * @github锛?https://github.com/SiberiaDante
+ * @鍗氬鍥細 http://www.cnblogs.com/shen-hua/
  */
 
 public class NormalDecoration extends RecyclerView.ItemDecoration {
@@ -49,3 +48,4 @@ public class NormalDecoration extends RecyclerView.ItemDecoration {
         outRect.bottom += mHeight;
     }
 }
+

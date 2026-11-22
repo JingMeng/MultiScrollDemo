@@ -3,16 +3,15 @@ package com.siberiadante.multiscrolldemo.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 
 
 import butterknife.ButterKnife;
 
 /**
  * @Created SiberiaDante
- * @Describe：
- * @CreateTime: 2017/12/5
+ * @Describe锛? * @CreateTime: 2017/12/5
  * @UpDateTime:
  * @Email: 2654828081@qq.com
  * @GitHub: https://github.com/SiberiaDante
@@ -41,3 +40,4 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     public abstract void initData();
 }
+

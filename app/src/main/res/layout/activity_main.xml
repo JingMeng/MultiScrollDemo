@@ -48,7 +48,7 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <android.support.design.widget.CollapsingToolbarLayout
+                    <com.google.android.material.appbar.CollapsingToolbarLayout
                         android:id="@+id/collapse"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -439,7 +439,7 @@
                                 <View style="@style/LineEight" />
                             </LinearLayout>
                         </LinearLayout>
-                    </android.support.design.widget.CollapsingToolbarLayout>
+                    </com.google.android.material.appbar.CollapsingToolbarLayout>
 
                 </LinearLayout>
 
@@ -450,7 +450,7 @@
                     android:layout_gravity="bottom"
                     android:background="@color/mainWhite" />
 
-                <android.support.v4.view.ViewPager
+                <androidx.viewpager.widget.ViewPager
                     android:id="@+id/view_pager"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -465,7 +465,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <android.support.v7.widget.Toolbar
+        <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             style="@style/AppTheme.Toolbar"
             android:layout_marginBottom="0dp"
@@ -485,7 +485,7 @@
                     android:src="@drawable/back_white" />
 
 
-                <android.support.v7.widget.ButtonBarLayout
+                <LinearLayout
                     android:id="@+id/buttonBarLayout"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -509,7 +509,7 @@
                         android:textSize="@dimen/font_16" />
 
 
-                </android.support.v7.widget.ButtonBarLayout>
+                </LinearLayout>
 
                 <ImageView
                     android:id="@+id/iv_menu"
@@ -519,7 +519,7 @@
                     android:src="@drawable/icon_menu_white" />
             </LinearLayout>
 
-        </android.support.v7.widget.Toolbar>
+        </androidx.appcompat.widget.Toolbar>
 
         <net.lucode.hackware.magicindicator.MagicIndicator
             android:id="@+id/magic_indicator_title"

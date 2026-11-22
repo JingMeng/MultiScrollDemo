@@ -4,8 +4,8 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.res.Resources;
 import android.os.Build;
-import android.support.annotation.FloatRange;
-import android.support.annotation.RequiresApi;
+import androidx.annotation.FloatRange;
+import androidx.annotation.RequiresApi;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.View;
@@ -18,7 +18,7 @@ import java.lang.reflect.Method;
 import java.util.regex.Pattern;
 
 /**
- * 状态栏透明
+ * 鐘舵€佹爮閫忔槑
  * Created by SCWANG on 2016/10/26.
  */
 
@@ -29,7 +29,7 @@ public class StatusBarUtil {
     public static float DEFAULT_ALPHA = 0;//Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP ? 0.2f : 0.3f;
     public static final int MIN_API = 19;
 
-    //<editor-fold desc="沉侵">
+    //<editor-fold desc="娌変镜">
     public static void immersive(Activity activity) {
         immersive(activity, DEFAULT_COLOR, DEFAULT_ALPHA);
     }
@@ -83,7 +83,7 @@ public class StatusBarUtil {
         }
     }
 
-    /** 设置状态栏darkMode,字体颜色及icon变黑(目前支持MIUI6以上,Flyme4以上,Android M以上) */
+    /** 璁剧疆鐘舵€佹爮darkMode,瀛椾綋棰滆壊鍙奿con鍙橀粦(鐩墠鏀寔MIUI6浠ヤ笂,Flyme4浠ヤ笂,Android M浠ヤ笂) */
     public static void darkMode(Activity activity) {
         darkMode(activity.getWindow(), DEFAULT_COLOR, DEFAULT_ALPHA);
     }
@@ -92,7 +92,7 @@ public class StatusBarUtil {
         darkMode(activity.getWindow(), color, alpha);
     }
 
-    /** 设置状态栏darkMode,字体颜色及icon变黑(目前支持MIUI6以上,Flyme4以上,Android M以上) */
+    /** 璁剧疆鐘舵€佹爮darkMode,瀛椾綋棰滆壊鍙奿con鍙橀粦(鐩墠鏀寔MIUI6浠ヤ笂,Flyme4浠ヤ笂,Android M浠ヤ笂) */
     public static void darkMode(Window window, int color, @FloatRange(from = 0.0, to = 1.0) float alpha) {
         if (isFlyme4Later()) {
             darkModeForFlyme4(window, true);
@@ -122,7 +122,7 @@ public class StatusBarUtil {
 
     //------------------------->
 
-    /** android 6.0设置字体颜色 */
+    /** android 6.0璁剧疆瀛椾綋棰滆壊 */
     @RequiresApi(Build.VERSION_CODES.M)
     private static void darkModeForM(Window window, boolean dark) {
 //        window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
@@ -139,7 +139,7 @@ public class StatusBarUtil {
     }
 
     /**
-     * 设置Flyme4+的darkMode,darkMode时候字体颜色及icon变黑
+     * 璁剧疆Flyme4+鐨刣arkMode,darkMode鏃跺€欏瓧浣撻鑹插強icon鍙橀粦
      * http://open-wiki.flyme.cn/index.php?title=Flyme%E7%B3%BB%E7%BB%9FAPI
      */
     public static boolean darkModeForFlyme4(Window window, boolean dark) {
@@ -171,7 +171,7 @@ public class StatusBarUtil {
     }
 
     /**
-     * 设置MIUI6+的状态栏是否为darkMode,darkMode时候字体颜色及icon变黑
+     * 璁剧疆MIUI6+鐨勭姸鎬佹爮鏄惁涓篸arkMode,darkMode鏃跺€欏瓧浣撻鑹插強icon鍙橀粦
      * http://dev.xiaomi.com/doc/p=4769/
      */
     public static boolean darkModeForMIUI6(Window window, boolean darkmode) {
@@ -190,14 +190,14 @@ public class StatusBarUtil {
         }
     }
 
-    /** 判断是否Flyme4以上 */
+    /** 鍒ゆ柇鏄惁Flyme4浠ヤ笂 */
     public static boolean isFlyme4Later() {
         return Build.FINGERPRINT.contains("Flyme_OS_4")
                 || Build.VERSION.INCREMENTAL.contains("Flyme_OS_4")
                 || Pattern.compile("Flyme OS [4|5]", Pattern.CASE_INSENSITIVE).matcher(Build.DISPLAY).find();
     }
 
-    /** 判断是否为MIUI6以上 */
+    /** 鍒ゆ柇鏄惁涓篗IUI6浠ヤ笂 */
     public static boolean isMIUI6Later() {
         try {
             Class<?> clz = Class.forName("android.os.SystemProperties");
@@ -213,47 +213,46 @@ public class StatusBarUtil {
     //</editor-fold>
 
 
-    /** 增加View的paddingTop,增加的值为状态栏高度 */
+    /** 澧炲姞View鐨刾addingTop,澧炲姞鐨勫€间负鐘舵€佹爮楂樺害 */
     public static void setPadding(Context context, View view) {
         if (Build.VERSION.SDK_INT >= MIN_API) {
             view.setPadding(view.getPaddingLeft(), view.getPaddingTop() + getStatusBarHeight(context),
                     view.getPaddingRight(), view.getPaddingBottom());
         }
     }
-    /** 增加View的paddingTop,增加的值为状态栏高度 (智能判断，并设置高度)*/
+    /** 澧炲姞View鐨刾addingTop,澧炲姞鐨勫€间负鐘舵€佹爮楂樺害 (鏅鸿兘鍒ゆ柇锛屽苟璁剧疆楂樺害)*/
     public static void setPaddingSmart(Context context, View view) {
         if (Build.VERSION.SDK_INT >= MIN_API) {
             ViewGroup.LayoutParams lp = view.getLayoutParams();
             if (lp != null && lp.height > 0) {
-                lp.height += getStatusBarHeight(context);//增高
+                lp.height += getStatusBarHeight(context);//澧為珮
             }
             view.setPadding(view.getPaddingLeft(), view.getPaddingTop() + getStatusBarHeight(context),
                     view.getPaddingRight(), view.getPaddingBottom());
         }
     }
 
-    /** 增加View的高度以及paddingTop,增加的值为状态栏高度.一般是在沉浸式全屏给ToolBar用的 */
+    /** 澧炲姞View鐨勯珮搴︿互鍙妏addingTop,澧炲姞鐨勫€间负鐘舵€佹爮楂樺害.涓€鑸槸鍦ㄦ矇娴稿紡鍏ㄥ睆缁橳oolBar鐢ㄧ殑 */
     public static void setHeightAndPadding(Context context, View view) {
         if (Build.VERSION.SDK_INT >= MIN_API) {
             ViewGroup.LayoutParams lp = view.getLayoutParams();
-            lp.height += getStatusBarHeight(context);//增高
+            lp.height += getStatusBarHeight(context);//澧為珮
             view.setPadding(view.getPaddingLeft(), view.getPaddingTop() + getStatusBarHeight(context),
                     view.getPaddingRight(), view.getPaddingBottom());
         }
     }
-    /** 增加View上边距（MarginTop）一般是给高度为 WARP_CONTENT 的小控件用的*/
+    /** 澧炲姞View涓婅竟璺濓紙MarginTop锛変竴鑸槸缁欓珮搴︿负 WARP_CONTENT 鐨勫皬鎺т欢鐢ㄧ殑*/
     public static void setMargin(Context context, View view) {
         if (Build.VERSION.SDK_INT >= MIN_API) {
             ViewGroup.LayoutParams lp = view.getLayoutParams();
             if (lp instanceof ViewGroup.MarginLayoutParams) {
-                ((ViewGroup.MarginLayoutParams) lp).topMargin += getStatusBarHeight(context);//增高
+                ((ViewGroup.MarginLayoutParams) lp).topMargin += getStatusBarHeight(context);//澧為珮
             }
             view.setLayoutParams(lp);
         }
     }
     /**
-     * 创建假的透明栏
-     */
+     * 鍒涘缓鍋囩殑閫忔槑鏍?     */
     public static void setTranslucentView(ViewGroup container, int color, @FloatRange(from = 0.0, to = 1.0) float alpha) {
         if (Build.VERSION.SDK_INT >= 19) {
             int mixtureColor = mixtureColor(color, alpha);
@@ -276,7 +275,7 @@ public class StatusBarUtil {
         return (color & 0x00ffffff) | (((int) (a * alpha)) << 24);
     }
 
-    /** 获取状态栏高度 */
+    /** 鑾峰彇鐘舵€佹爮楂樺害 */
     public static int getStatusBarHeight(Context context) {
         int result = 24;
         int resId = context.getResources().getIdentifier("status_bar_height", "dimen", "android");
@@ -289,3 +288,4 @@ public class StatusBarUtil {
         return result;
     }
 }
+

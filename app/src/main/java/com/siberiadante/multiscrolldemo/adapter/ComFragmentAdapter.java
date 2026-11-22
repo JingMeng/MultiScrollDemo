@@ -1,15 +1,14 @@
 package com.siberiadante.multiscrolldemo.adapter;
 
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentPagerAdapter;
 
 import java.util.List;
 
 /**
  * @Created SiberiaDante
- * @Describe：
- * @CreateTime: 2017/12/11
+ * @Describe锛? * @CreateTime: 2017/12/11
  * @UpDateTime:
  * @Email: 2654828081@qq.com
  * @GitHub: https://github.com/SiberiaDante
@@ -35,3 +34,4 @@ public class ComFragmentAdapter extends FragmentPagerAdapter {
         return fragments != null ? fragments.size() : 0;
     }
 }
+

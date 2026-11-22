@@ -1,9 +1,9 @@
 package com.siberiadante.multiscrolldemo.fragment;
 
 import android.os.Bundle;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import androidx.core.content.ContextCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
@@ -22,8 +22,7 @@ import butterknife.BindView;
 
 /**
  * @Created SiberiaDante
- * @Describe：
- * @CreateTime: 2017/12/14
+ * @Describe锛? * @CreateTime: 2017/12/14
  * @UpDateTime:
  * @Email: 2654828081@qq.com
  * @GitHub: https://github.com/SiberiaDante
@@ -54,7 +53,7 @@ public class ArticleFragment extends LazyFragment {
         final List<MineArticleBean> data = new ArrayList<>();
         for (int i = 0; i < 20; i++) {
             final MineArticleBean articleBean = new MineArticleBean();
-            articleBean.setContent("使用NestedScrollView+ViewPager+RecyclerView+SmartRefreshLayout打造酷炫下拉视差效果并解决各种滑动冲突" + i);
+            articleBean.setContent("浣跨敤NestedScrollView+ViewPager+RecyclerView+SmartRefreshLayout鎵撻€犻叿鐐笅鎷夎宸晥鏋滃苟瑙ｅ喅鍚勭婊戝姩鍐茬獊" + i);
             data.add(articleBean);
         }
         recyclerView.setLayoutManager(new LinearLayoutManager(mActivity));
@@ -86,3 +85,4 @@ public class ArticleFragment extends LazyFragment {
     }
 
 }
+

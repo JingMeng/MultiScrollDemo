@@ -2,12 +2,12 @@ package com.siberiadante.multiscrolldemo.activity;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.content.ContextCompat;
-import android.support.v4.view.ViewPager;
-import android.support.v4.widget.NestedScrollView;
-import android.support.v7.widget.ButtonBarLayout;
-import android.support.v7.widget.Toolbar;
+import androidx.fragment.app.Fragment;
+import androidx.core.content.ContextCompat;
+import androidx.viewpager.widget.ViewPager;
+import androidx.core.widget.NestedScrollView;
+import android.widget.LinearLayout;
+import androidx.appcompat.widget.Toolbar;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AccelerateInterpolator;
@@ -65,7 +65,7 @@ public class MainActivity extends BaseActivity {
     @BindView(R.id.scrollView)
     JudgeNestedScrollView scrollView;
     @BindView(R.id.buttonBarLayout)
-    ButtonBarLayout buttonBarLayout;
+    LinearLayout buttonBarLayout;
     @BindView(R.id.magic_indicator)
     MagicIndicator magicIndicator;
     @BindView(R.id.magic_indicator_title)
@@ -81,9 +81,9 @@ public class MainActivity extends BaseActivity {
 //            dealWithHuaWei();
 //            int navigationBarIsMin = Settings.System.getInt(getContentResolver(), "navigationbar_is_min", 0);
 //            if (navigationBarIsMin == 1) {
-//                Log.d(TAG, "onChange: ------------------导航键隐藏了");
+//                Log.d(TAG, "onChange: ------------------瀵艰埅閿殣钘忎簡");
 //            } else {
-//                Log.d(TAG, "onChange: ------------------导航键显示了");
+//                Log.d(TAG, "onChange: ------------------瀵艰埅閿樉绀轰簡");
 //            }
 //        }
 //    };
@@ -122,8 +122,7 @@ public class MainActivity extends BaseActivity {
             }
         });
 
-        //判断是否是华为手机并且是否有虚拟导航键
-//        if (DeviceUtil.isHUAWEI() && DeviceUtil.checkDeviceHasNavigationBar(this.getApplicationContext())) {
+        //鍒ゆ柇鏄惁鏄崕涓烘墜鏈哄苟涓旀槸鍚︽湁铏氭嫙瀵艰埅閿?//        if (DeviceUtil.isHUAWEI() && DeviceUtil.checkDeviceHasNavigationBar(this.getApplicationContext())) {
 //            getContentResolver().registerContentObserver(Settings.System.getUriFor
 //                    ("navigationbar_is_min"), true, mNavigationStatusObserver);
 //        }
@@ -283,8 +282,7 @@ public class MainActivity extends BaseActivity {
     }
 
     /**
-     * 处理华为虚拟键显示隐藏问题导致屏幕高度变化，ViewPager的高度也需要重新测量
-     */
+     * 澶勭悊鍗庝负铏氭嫙閿樉绀洪殣钘忛棶棰樺鑷村睆骞曢珮搴﹀彉鍖栵紝ViewPager鐨勯珮搴︿篃闇€瑕侀噸鏂版祴閲?     */
 //    private void dealWithHuaWei() {
 //        flActivity.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
 //            @Override
@@ -301,16 +299,16 @@ public class MainActivity extends BaseActivity {
                 toast("SiberiaDante");
                 break;
             case R.id.iv_avatar:
-                toast("头像");
+                toast("澶村儚");
                 break;
             case R.id.tv_authentication:
-                toast("头衔认证");
+                toast("澶磋璁よ瘉");
                 break;
             case R.id.tv_edit_info:
-                toast("编辑资料");
+                toast("缂栬緫璧勬枡");
                 break;
             case R.id.tv_position:
-                toast("中国·GitHub");
+                toast("涓浗路GitHub");
                 break;
         }
     }
@@ -319,3 +317,4 @@ public class MainActivity extends BaseActivity {
         Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
     }
 }
+
